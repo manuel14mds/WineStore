@@ -2,5 +2,16 @@
 
 {% block content %}
 <h1>Esta es la lista de vinos</h1>
-
+    {% if wine_list %}
+        {% for wine in wine_list %}
+            <h3>{{ wine.name }}</h3>
+            <p>Bodega: {{ wine.winery }}</p>
+            <p>Variedad: {{ wine.variety }}</p>
+            <p>Año: {{ wine.age }}</p>
+            <p>Precio: {{ wine.price }}</p>
+            <hr>
+        {% endfor %}
+    {% else %}
+        <p>Todavía no se ha creado ningún vino.</p>
+    {% endif %}
 {% endblock %}
