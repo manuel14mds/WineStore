@@ -5,17 +5,27 @@
 {% endblock %}
 
 {% block content %}
-<h1>Esta es la lista de vinos</h1>
-    {% if wine_list %}
-        {% for wine in wine_list %}
-            <h3>{{ wine.name }}</h3>
-            <p>Bodega: {{ wine.winery }}</p>
-            <p>Variedad: {{ wine.variety }}</p>
-            <p>Año: {{ wine.age }}</p>
-            <p>Precio: {{ wine.price }}</p>
-            <hr>
-        {% endfor %}
-    {% else %}
-        <p>Todavía no se ha creado ningún vino.</p>
-    {% endif %}
+<h1>Nuestros Vinos</h1>
+{% if wine_list %}
+    {% for wine in wine_list %}
+    <div class="card" style="width: 18rem;">
+        <img src="https://i.blogs.es/576a60/istock-837387558/450_1000.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{ wine.name }}</h5>
+            <p class="card-text">La variedad de este vino es {{ wine.variety }}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Bodega: {{ wine.winery }}</li>
+            <li class="list-group-item">Año: {{ wine.age }}</li>
+            <li class="list-group-item">Precio: $ {{ wine.price }}</li>
+        </ul>
+        <div class="card-body">
+            <a href="#" class="card-link">Ir: {{ wine.variety }}</a>
+            <a href="#" class="card-link">Ir: {{ wine.winery }}</a>
+        </div>
+    </div>
+    {% endfor %}
+{% else %}
+    <p>Todavía no se ha creado ningún vino.</p>
+{% endif %}
 {% endblock %}
