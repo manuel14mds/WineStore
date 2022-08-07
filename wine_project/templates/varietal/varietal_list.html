@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Varietal
+{% endblock %}
+
+{% block content %}
+<h1>Lista de varietales</h1>
+    {% if varietal_list %}
+        {% for varietal in varietal_list %}
+            <h3>{{ varietal.name }}</h3>
+            <p>Caracteristicas: {{ varital.features }}</p>
+            <p>Tipo de Uva: {{ varietal.type_grape }}</p>
+            <p>Ubicación: {{ varietal.location }}</p>
+            <p>Bodega: {{ varietal.winery }}</p>
+            <p>Vino: {{ varietal.wine }}</p>
+            <hr>
+        {% endfor %}
+    {% else %}
+        <p>Todavía no se ha cargado ningún varietal.</p>
+    {% endif %}
+{% endblock %}
