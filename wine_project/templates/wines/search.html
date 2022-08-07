@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>Buscar</title>
+{% endblock %}
+{% block content %}
+
+    {% for wine in wines %}
+    <div class="card" style="width: 18rem;">
+        <img src="https://i.blogs.es/576a60/istock-837387558/450_1000.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{ wine.name }}</h5>
+            <p class="card-text">La variedad de este vino es {{ wine.variety }}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Bodega: {{ wine.winery }}</li>
+            <li class="list-group-item">Año: {{ wine.age }}</li>
+            <li class="list-group-item">Precio: $ {{ wine.price }}</li>
+        </ul>
+        <div class="card-body">
+            <a href="#" class="card-link">Ir: {{ wine.variety }}</a>
+            <a href="#" class="card-link">Ir: {{ wine.winery }}</a>
+        </div>
+    </div>
+    {% endfor %}
+
+{% endblock %}
