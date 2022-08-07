@@ -10,3 +10,4 @@ def wines(request):
 class WineCreate(CreateView):
     model = Wine
     fields = '__all__'
+    success_url = '/'
