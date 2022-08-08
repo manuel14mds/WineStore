@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    add winery
+{% endblock %}
+
+
+{% block content %}
+    <div class="container">
+        <h1>New Winery</h1>
+
+        <form method="POST" action="">
+            {% csrf_token %}
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" name="name" required>
+            </div>
+            <div class="form-group">
+                <label>Specialty</label>
+                <input type="text" class="form-control" name="specialty" required>
+            </div>
+            <div class="form-group">
+                <label>Owner name</label>
+                <input type="text" class="form-control" name="owner_name" required>
+            </div>
+
+            <input class="btn btn-outline-dark" type="submit" value="submit">
+        </form>
+    </div>
+
+{% endblock %}

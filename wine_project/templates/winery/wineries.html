@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    wineries
+{% endblock %}
+
+
+{% block content %}
+    <div class="container" style="padding: 15px;">
+        <div class="accordion" id="accordionExample">
+            {% if listVoid %}
+                <h2>There are Not products yet</h2>
+            {% else %}
+                {% for winery in wineries %}
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h2 class="mb-0">
+                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            {{winery.name}}
+                        </button>
+                        </h2>
+                    </div>
+                
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                        <div class="card-body">
+                        <code>Name:</code> {{winery.name}}<br>
+                        <code>Owner Name:</code> {{winery.owner_name}}<br>
+                        <code>Specialty:</code> {{winery.specialty}}<br>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+                {% endfor %}
+
+            {%endif%}
+        </div>
+    </div>
+
+{% endblock %}
