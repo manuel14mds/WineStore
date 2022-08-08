@@ -31,22 +31,25 @@
                     <a class="nav-link" href="/wines">All Wines</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">New Wine</a>
+                    <a class="nav-link" href="{% url 'wine_create' %}">Add Wine</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Category</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">winery</a>
+                    <a class="nav-link" href="#">Add Category</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Winery</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Add Winery</a>
                 </li>
                 
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <form class="form-inline my-2 my-lg-0" action="{% url 'search' %}" method="GET">
+                <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Buscar" name="search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
             </form>
         </div>
     </nav>
@@ -55,7 +58,7 @@
 
     <footer>
         <div class="container-fluid bg-dark text-white d-flex justify-content-center align-items-center" style="height: 100px;">
-            <p class="container" style="text-align: center;">This project has been depeloved by Lucia Gomes, Luis Segovia and Manuel Florez.</p>
+            <p class="container" style="text-align: center;">This project has been depeloved by Lucia Gomes, Luis Pablo Segovia and Manuel Florez.</p>
         </div>
     </footer>
 
