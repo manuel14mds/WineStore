@@ -1,13 +1,10 @@
 {% extends 'base.html' %}
-
 {% block title %}
-    Wines
+    <title>Buscar</title>
 {% endblock %}
-
 {% block content %}
-<h1>Nuestros Vinos</h1>
-{% if wine_list %}
-    {% for wine in wine_list %}
+
+    {% for wine in wines %}
     <div class="card" style="width: 18rem;">
         <img src="https://i.blogs.es/576a60/istock-837387558/450_1000.jpg" class="card-img-top" alt="...">
         <div class="card-body">
@@ -25,7 +22,5 @@
         </div>
     </div>
     {% endfor %}
-{% else %}
-    <p>Todavía no se ha creado ningún vino.</p>
-{% endif %}
+
 {% endblock %}
