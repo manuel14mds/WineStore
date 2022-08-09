@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import varietal
 
-def varietal(request):
+def varietal_func(request):
     varietal_list = varietal.objects.all()
     context = {
         'varietal_list':varietal_list
