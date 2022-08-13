@@ -3,7 +3,7 @@
     <title>Buscar</title>
 {% endblock %}
 {% block content %}
-
+{% if wines %}
     {% for wine in wines %}
     <div class="card" style="width: 18rem;">
         <img src="https://i.blogs.es/576a60/istock-837387558/450_1000.jpg" class="card-img-top" alt="...">
@@ -22,5 +22,8 @@
         </div>
     </div>
     {% endfor %}
-
+{% else %}
+<h2>There is no match :(</h2>
+<p>Please, check again with a proper wine name.</p>
+{% endif %}
 {% endblock %}
