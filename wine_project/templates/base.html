@@ -45,17 +45,32 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/winery/addWinery/" style="margin-right: 200px ;">Add Winery</a>
                 </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                    varietal
+                    </a>
+
+                    <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Red Wine</a>
+                    <a class="dropdown-item" href="#">Malbec</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">all</a>
+                    </div>
+                </li>
+
+
                 {% if request.user.is_authenticated %}
-                <li class="nav-item">
-                    <a class="nav-link" href="/users/logout/">Logout</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/users/logout/">Logout</a>
+                    </li>
                 {% else %}
-                <li class="nav-item">
-                    <a class="nav-link" href="/users/login/">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/users/register/">Register</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/users/login/">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/users/register/">Register</a>
+                    </li>
                 {% endif %}
             </ul>
             <form class="form-inline my-2 my-lg-0" action="{% url 'search' %}" method="GET">
@@ -66,6 +81,23 @@
     </nav>
     {% block content %}
     {% endblock %}
+
+
+    <section>
+        <div class="container d-flex flex-row justify-content-between align-items-center bg-secondary"
+        style="height: 450px;">
+            <a class="item" href="#">
+                <img style="width:350px" src="https://www.thespruceeats.com/thmb/Z6Q_Dfy2jlBi4_K0saTn3z3Hgko=/3840x3840/smart/filters:no_upscale()/red-wine-is-poured-into-a-glass-from-a-bottle--light-background--1153158143-98320451802c485cb6d7b5437c7fd60a.jpg" alt="">
+            </a>
+            <a class="item" href="#">
+                <img style="width:350px" src="https://www.ikea.com/au/en/images/products/storsint-white-wine-glass-clear-glass__0618070_pe688325_s5.jpg?f=s" alt="">
+                
+            </a>
+            <a class="item" href="#">
+                <img style="width:350px" src="https://i.guim.co.uk/img/media/a911cc22cdc4e42be5912ec7fc2cb3d6eeb0cea3/0_374_1827_1627/master/1827.jpg?width=620&quality=85&fit=max&s=8da4114fc9c7d7184c9eed80abc2f68f" alt="">
+            </a>
+        </div>
+    </section>
 
     <footer>
         <div class="container-fluid bg-dark text-white d-flex justify-content-center align-items-center" style="height: 100px;">
