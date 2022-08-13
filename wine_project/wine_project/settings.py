@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'wines',
     'varietal',
     'winery',
+    'users',
 ]
 
 MIDDLEWARE = [
