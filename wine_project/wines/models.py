@@ -6,6 +6,7 @@ class Wine(models.Model):
     varietal = models.CharField(max_length=50)
     age = models.IntegerField()
     price = models.FloatField(default=0)
+    image = models.ImageField(upload_to='wines/', null=True, blank=True)
 
     def __str__(self):
         return self.name

@@ -9,7 +9,7 @@
 {% if wine_list %}
     {% for wine in wine_list %}
     <div class="card" style="width: 18rem;">
-        <img src="https://i.blogs.es/576a60/istock-837387558/450_1000.jpg" class="card-img-top" alt="...">
+        <img src="{{ wine.image.url }}" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">{{ wine.name }}</h5>
             <p class="card-text">This wine's varietal is {{ wine.varietal }}</p>
