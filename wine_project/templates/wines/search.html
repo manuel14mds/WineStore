@@ -9,7 +9,7 @@
         <img src="https://i.blogs.es/576a60/istock-837387558/450_1000.jpg" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">{{ wine.name }}</h5>
-            <p class="card-text">La variedad de este vino es {{ wine.variety }}</p>
+            <p class="card-text">Varietal is {{ wine.variety }}</p>
         </div>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">Winery: {{ wine.winery }}</li>
@@ -17,8 +17,8 @@
             <li class="list-group-item">Price: $ {{ wine.price }}</li>
         </ul>
         <div class="card-body">
-            <a href="#" class="card-link">Ir: {{ wine.varietal }}</a>
-            <a href="#" class="card-link">Ir: {{ wine.winery }}</a>
+            <a href="#" class="card-link">Go: {{ wine.varietal }}</a>
+            <a href="#" class="card-link">Go: {{ wine.winery }}</a>
         </div>
     </div>
     {% endfor %}

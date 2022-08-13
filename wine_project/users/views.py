@@ -19,11 +19,11 @@ def login_request(request):
             if user is not None:
                 login(request, user)
                 
-                context = {'message':f'Bienvenido {username}!! :D'}
+                context = {'message':f'Welcome {username}!!'}
                 return render(request, 'index.html', context = context)
 
         form = AuthenticationForm()
-        return render(request, 'users/login.html', {'error': 'Formulario inválido', 'form': form})
+        return render(request, 'users/login.html', {'error': 'Not the right form', 'form': form})
 
     elif request.method == 'GET':
         form = AuthenticationForm()
