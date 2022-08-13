@@ -4,24 +4,22 @@
 {% endblock %}
 {% block content %}
 {% if wines %}
+<div class="container d-flex flex-row justify-content-around">
     {% for wine in wines %}
     <div class="card" style="width: 18rem;">
-        <img src="https://i.blogs.es/576a60/istock-837387558/450_1000.jpg" class="card-img-top" alt="...">
+        <img src="{{ wine.image.url }}" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">{{ wine.name }}</h5>
-            <p class="card-text">Varietal is {{ wine.variety }}</p>
+            <p class="card-text">This wine's varietal is {{ wine.varietal }}</p>
         </div>
         <ul class="list-group list-group-flush">
             <li class="list-group-item">Winery: {{ wine.winery }}</li>
             <li class="list-group-item">Age: {{ wine.age }}</li>
             <li class="list-group-item">Price: $ {{ wine.price }}</li>
         </ul>
-        <div class="card-body">
-            <a href="#" class="card-link">Go: {{ wine.varietal }}</a>
-            <a href="#" class="card-link">Go: {{ wine.winery }}</a>
-        </div>
     </div>
     {% endfor %}
+</div>
 {% else %}
 <h2>There is no match :(</h2>
 <p>Please, check again with a proper wine name.</p>
