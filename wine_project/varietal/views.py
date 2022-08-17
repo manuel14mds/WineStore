@@ -14,8 +14,8 @@ def add_varietal(request):
                 features = form.cleaned_data['features'],
                 type_grape = form.cleaned_data['type_grape'],
                 location = form.cleaned_data['location'],
-                winery = form.cleaned_data['winery'],
-                wine = form.cleaned_data['wine']
+                # winery = form.cleaned_data['winery'],
+                # wine = form.cleaned_data['wine']
             )
             return redirect(varietal_func)
 
