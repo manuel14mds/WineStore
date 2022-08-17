@@ -1,5 +1,6 @@
 from django.shortcuts import redirect, render
 from .models import varietal
+from wines.models import Wine
 from varietal.forms import form_varietal
 
 
@@ -30,3 +31,9 @@ def varietal_func(request):
         'varietal_list':varietal_list
     }
     return render(request, 'varietal/varietal_list.html', context=context)
+
+def varietal_products(request, vid):
+    var = varietal.objects.get(pk=vid)
+    wine_list = Wine.objects.filter(varietal=var)
+
+    return render(request, 'varietal/varietal_products.html', context={'varietal':var, 'wine_list':wine_list})

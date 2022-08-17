@@ -1,9 +1,10 @@
 from django.urls import path
 from . import views
-from varietal.views import varietal_func, add_varietal
+from varietal.views import varietal_func, add_varietal, varietal_products
 
 urlpatterns = [
-    path('varietal/', views.varietal_func, name='varietal'),
-    path('addVarietal/', views.add_varietal, name='add_varietal'),
+    path('varietal/', varietal_func, name='varietal'),
+    path('addVarietal/', add_varietal, name='add_varietal'),
+    path('varietal_products/<int:vid>/', varietal_products, name='varietal_products'),
     
 ]

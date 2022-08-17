@@ -5,18 +5,38 @@
 {% endblock %}
 
 {% block content %}
+<style>
+    a:hover{
+        text-decoration: none;
+    }
+</style>
 <h1>Lista de varietales</h1>
-    {% if varietal_list %}
-        {% for varietal in varietal_list %}
-            <h3>{{ varietal.name }}</h3>
-            <p>Caracteristicas: {{ varital.features }}</p>
-            <p>Tipo de Uva: {{ varietal.type_grape }}</p>
-            <p>Ubicación: {{ varietal.location }}</p>
-            <!-- <p>Bodega: {{ varietal.winery }}</p>
-            <p>Vino: {{ varietal.wine }}</p> -->
-            <hr>
-        {% endfor %}
-    {% else %}
-        <p>Todavía no se ha cargado ningún varietal.</p>
-    {% endif %}
+    <div class="container">
+        {% if varietal_list %}
+        <div class="row">
+    
+            {% for varietal in varietal_list %}
+                <div class="item col-6" style="text-align: center;">
+                    <div class="container" 
+                    style="padding: 20px; border: 2px solid gray;
+                    border-radius: 10px; margin: 5px 0px;
+                    width: 500px; height: 200px;">
+                        <!-- <a href="{% url 'varietal_products' varietal.id %}" style="color: black;"> -->
+                        <!-- <a href="{% url 'varietal_products' varietal.id %}" style="color: black;"> -->
+                        <a href="/varietal/varietal_products/{{varietal.id}}/" style="color: black;">
+                            <h3>{{ varietal.name }}</h3>
+                            <p>Features: {{ varietal.features }}</p>
+                            <p>Grape type: {{ varietal.type_grape }}</p>
+                            <p>Location: {{ varietal.location }}</p>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+    
+        </div>
+        {% else %}
+            <p>Todavía no se ha cargado ningún varietal.</p>
+        {% endif %}
+
+    </div>
 {% endblock %}

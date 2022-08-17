@@ -30,35 +30,27 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/wines">All Wines</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'wine_create' %}">Add Wine</a>
-                </li>
+                {% if request.user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'wine_create' %}">Add Wine</a>
+                    </li>
+                {% endif %}
                 <li class="nav-item">
                     <a class="nav-link" href="/varietal/varietal/">Varietal</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/varietal/addVarietal/">Add Varietal</a>
-                </li>
+                {% if request.user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/varietal/addVarietal/">Add Varietal</a>
+                    </li>
+                    {% endif %}
                 <li class="nav-item">
                     <a class="nav-link" href="/winery/wineries/">Winery</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/winery/addWinery/" style="margin-right: 200px ;">Add Winery</a>
-                </li>
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                    varietal
-                    </a>
-
-                    <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Red Wine</a>
-                    <a class="dropdown-item" href="#">Malbec</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">all</a>
-                    </div>
-                </li>
-
+                {% if request.user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/winery/addWinery/" style="margin-right: 200px ;">Add Winery</a>
+                    </li>
+                {% endif %}
 
                 {% if request.user.is_authenticated %}
                     <li class="nav-item">

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Varietal
+{% endblock %}
+
+{% block content %}
+    <h1>{{varietal.name}}</h1>
+    <p>Features: {{varietal.features}} <br>
+        Grape type: {{varietal.type_grape}} <br>
+        Location: {{varietal.location}} <br>
+    </p>
+    {% if wine_list %}
+        <div class="container d-flex flex-row justify-content-around">
+            {% for wine in wine_list %}
+            <div class="card" style="width: 18rem;">
+                <img src="{{ wine.image.url }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ wine.name }}</h5>
+                <!--     <p class="card-text">This wine's varietal is {{ wine.varietal }}</p> -->
+                </div>
+                <ul class="list-group list-group-flush">
+                    <!-- <li class="list-group-item">Winery: {{ wine.winery }}</li>
+                    <li class="list-group-item">Age: {{ wine.age }}</li> -->
+                    <li class="list-group-item">Price: $ {{ wine.price }}</li>
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+
+    {% else %}
+        <p>There are no listed wines yet.</p>
+    {% endif %}
+{% endblock %}
