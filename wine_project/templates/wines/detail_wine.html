@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+    <title>Detail Wine</title>
+{% endblock %}
+{% block content %}
+<div class="container">
+<p>Detalle </p>
+<p>Name: {{wine.name}}</p>
+<p>Price: {{wine.price}}</p>
+<p>winery: {{wine.winery}}</p>
+<p>varietal: {{wine.varietal}}</p>
+
+
+
+</div>
+    {% endblock %}

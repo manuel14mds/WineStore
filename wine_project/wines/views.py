@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
 from .models import Wine
 from django.views.generic.edit import CreateView
 
@@ -20,3 +20,13 @@ def search_products(request):
     wines = Wine.objects.filter(name__icontains=search)  #Trae los que cumplan la condicion
     context = {'wines':wines}
     return render(request, 'wines/search.html', context=context)
+
+def detail_wine(request, id):
+    wine = Wine.objects.get(id = id)
+    print(wine)
+    return render(request, 'wines/detail_wine.html', context={"wine":wine})
+
+def delete_wine(request, id):
+    wine = Wine.objects.get(id = id)
+    wine.delete()
+    return redirect(wines)

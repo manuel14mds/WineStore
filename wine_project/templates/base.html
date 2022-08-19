@@ -42,7 +42,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/varietal/addVarietal/">Add Varietal</a>
                     </li>
-                    {% endif %}
+                {% endif %}
                 <li class="nav-item">
                     <a class="nav-link" href="/winery/wineries/">Winery</a>
                 </li>
@@ -51,6 +51,10 @@
                         <a class="nav-link" href="/winery/addWinery/" style="margin-right: 200px ;">Add Winery</a>
                     </li>
                 {% endif %}
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#about_us">About Us</a>
+                </li>
 
                 {% if request.user.is_authenticated %}
                     <li class="nav-item">
