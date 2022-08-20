@@ -53,7 +53,7 @@
                 {% endif %}
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#about_us">About Us</a>
+                    <a class="nav-link" href="{% url 'about' %}">About Us</a>
                 </li>
 
                 {% if request.user.is_authenticated %}
