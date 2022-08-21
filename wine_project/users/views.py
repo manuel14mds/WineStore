@@ -1,3 +1,4 @@
+from multiprocessing import context
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.forms import AuthenticationForm
@@ -5,6 +6,8 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
 
 from users.forms import User_registration_form
+
+from .models import User_profile
 
 
 def login_request(request):
@@ -47,4 +50,6 @@ def register(request):
 
 def show_profile(request):
     if request.user.is_authenticated:
-        return HttpResponse(request.user.profile.phone)
+        profile = request.user.profile
+        context = {'profile': profile}
+        return render(request, 'users/profile.html', context=context)
