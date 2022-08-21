@@ -15,6 +15,7 @@
 </form>
 <form action="/wines/update-wine/{{wine.pk}}/" method="POST">
     {% csrf_token %}
+    <br>
     <button type="submit" class="btn btn-danger">Update</button>
 </form>
 
