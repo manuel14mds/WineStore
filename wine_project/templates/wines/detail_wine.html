@@ -9,8 +9,14 @@
 <p>Price: {{wine.price}}</p>
 <p>winery: {{wine.winery}}</p>
 <p>varietal: {{wine.varietal}}</p>
-
-
+<form action="/wines/delete-wine/{{wine.id}}/" method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>
+<form action="/wines/update-wine/{{wine.pk}}/" method="POST">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Update</button>
+</form>
 
 </div>
     {% endblock %}

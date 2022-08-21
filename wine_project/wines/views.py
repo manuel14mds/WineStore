@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render
 from .models import Wine
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -30,3 +30,8 @@ def delete_wine(request, id):
     wine = Wine.objects.get(id = id)
     wine.delete()
     return redirect(wines)
+
+class WineUpdate(LoginRequiredMixin, UpdateView):
+    model = Wine
+    fields = '__all__'
+    success_url = '/'

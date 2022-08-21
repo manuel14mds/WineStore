@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load crispy_forms_tags %}
 
 {% block title %}
     Add Varietal
@@ -10,10 +10,8 @@
 <form action="" method="POST">
 {% csrf_token %}
 
-<table>
-{{form.as_table}}
+{{form|crispy}}
 
-</table>
 <p><input type="submit" value="Enviar"></p>
 
 {% endblock %}
