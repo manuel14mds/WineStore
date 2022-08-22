@@ -1,9 +1,11 @@
 from multiprocessing import context
+from unicodedata import name
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from django.contrib.auth.forms import AuthenticationForm
 
 from django.contrib.auth import login, logout, authenticate
+from wine_project.views import home
 
 from users.forms import User_registration_form
 
@@ -48,8 +50,17 @@ def register(request):
         form = User_registration_form()
         return render(request, 'users/register.html', {'form': form})
 
-def show_profile(request):
-    if request.user.is_authenticated:
-        profile = request.user.profile
-        context = {'profile': profile}
-        return render(request, 'users/profile.html', context=context)
+def show_profile(request, pk):
+    if request.method == 'POST':
+        user = User_profile.objects.get(pk=pk)
+        user.phone = request.POST['phone']
+        user.address = request.POST['address']
+        user.save()
+        return redirect(home)
+
+    elif request.method == 'GET':
+        print(6)
+        if request.user.is_authenticated:
+            profile = request.user.profile
+            context = {'profile': profile}
+            return render(request, 'users/profile.html', context=context)
