@@ -5,17 +5,24 @@
 {% endblock %}
 
 {% block content %}
-
-<form action="" method="POST">
-    {% csrf_token %}
-    <table>
-        {{ form.as_table }}
-    </table>
-    <p><input type="submit" value="Click here to start the session-->"></p>
-</form>
-
-    {% if error %}
+    <div class="container" 
+    style="display: grid; place-items:center; padding:100px; 
+    border-radius: 20px; margin-top: 20px; margin-bottom: 20px;
+    background-color: rgb(59, 59, 59); color: whitesmoke;">
+        <h1>LOGIN</h1>
+        <br>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <table>
+                {{ form.as_table }}
+            </table>
+            <br>
+            <p><input type="submit" value="Click to start the session"></p>
+        </form>
+        
+        {% if error %}
         <p style="color:red;">{{ error }}</p>
-    {% endif %}
+        {% endif %}
+    </div>
 
 {% endblock %}

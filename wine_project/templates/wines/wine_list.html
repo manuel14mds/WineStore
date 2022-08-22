@@ -5,59 +5,73 @@
 {% endblock %}
 
 {% block content %}
-<h1>Wines List</h1>
-{% if wine_list %}
-    <div class="container d-flex flex-row justify-content-around">
-        {% for wine in wine_list %}
-        <div class="card" style="width: 18rem;">
-            <a href="detail/{{wine.id}}/">
-                    <img src="{{ wine.image.url }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ wine.name }}</h5>
-                    <!--     <p class="card-text">This wine's varietal is {{ wine.varietal }}</p> -->
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <!-- <li class="list-group-item">Winery: {{ wine.winery }}</li>
-                        <li class="list-group-item">Age: {{ wine.age }}</li> -->
-                        <li class="list-group-item">Price: $ {{ wine.price }}</li>
-                    </ul>
-            </a>
-            {% if request.user.is_authenticated %}
-                                        <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal{{wine.id}}">
-                        Delete
-                    </button>
-                                        
-                    <!-- Modal -->
-                    <div class="modal fade" id="exampleModal{{wine.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Delete wine</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                                </div>
-                                <div class="modal-body">
-                                Are you sure you want delete this product?
-                                </div>
-                                <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <form action="/wines/delete-wine/{{wine.id}}/" method="POST">
-                                    {% csrf_token %}
-                                    <button type="submit" class="btn btn-danger">Delete</button>
-                                </form>
+    <style>
+        .containerCard{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            padding:30px 0px;
+        }
+        .card:hover{transform: scale(1.1);}
+        a:hover{text-decoration: none;}
+        a{color: black;}
+    </style>
+    <section class="container">
+        {% if wine_list %}
+            <div class="container containerCard">
+
+                {% for wine in wine_list %}
+
+                    <div class="card" style="width: 230px;">
+                        <a href="detail/{{wine.id}}/">
+                            <img src="{{ wine.image.url }}" class="card-img-top" alt="image{{wine.name}}">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ wine.name }}</h5>
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Price: $ {{ wine.price }}</li>
+                            </ul>
+                        </a>
+
+                        {% if request.user.is_authenticated %}
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal{{wine.id}}">
+                                Delete
+                            </button>
+                            
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal{{wine.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Delete wine</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Are you sure you want delete this product?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <form action="/wines/delete-wine/{{wine.id}}/" method="POST">
+                                                {% csrf_token %}
+                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                            </form>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-            {% endif %}
-                </div>
-            
-        {% endfor %}
-    </div>
+                        {% endif %}
 
-{% else %}
-    <p>There are no listed wines yet.</p>
-{% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        
+        {% else %}
+            <p>There are no listed wines yet.</p>
+        {% endif %}
+
+    </section>
 {% endblock %}

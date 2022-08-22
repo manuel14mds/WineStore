@@ -5,8 +5,7 @@
 {% endblock %}
 
 {% block content %}
-<h1>Winery List</h1>
-    <div class="container" style="padding: 15px;">
+    <div class="container" style="padding: 20px;margin-top: 10px;">
         <div class="accordion" id="accordionExample">
             {% if listVoid %}
                 <h2>There are Not products yet</h2>
@@ -30,12 +29,9 @@
                     </div>
                 </div>
                 
-                
-                
                 {% endfor %}
 
             {%endif%}
         </div>
     </div>
-
 {% endblock %}

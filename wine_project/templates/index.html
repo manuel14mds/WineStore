@@ -6,14 +6,20 @@
 
 
 {% block content %}
-
-<h1>This is the index page</h1>
-<h2>{{ request.user.is_authenticated }}</h2>
-
-{% if message %}
-
-    <h2>{{ message }}</h2>
-
-{% endif %}
+<div class="container" 
+        style="display: grid; place-items:center; padding:100px; 
+        border-radius: 20px; margin-top: 20px; margin-bottom: 20px;
+        background-color: rgb(59, 59, 59); color: whitesmoke;">
+        
+        <h1>This is the index page</h1>
+        <h2>{{ request.user.is_authenticated }}</h2>
+        
+        {% if message %}
+        
+            <h2>{{ message }}</h2>
+        
+        {% endif %}
+    </div>
+    
 
 {% endblock %}

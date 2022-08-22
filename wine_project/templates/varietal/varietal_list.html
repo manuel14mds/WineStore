@@ -5,24 +5,23 @@
 {% endblock %}
 
 {% block content %}
-<style>
-    a:hover{
-        text-decoration: none;
-    }
-</style>
-<h1>Varietal List</h1>
-    <div class="container">
+    <style>
+        a:hover{
+            text-decoration: none;
+        }
+    </style>
+    <div class="container" style="padding: 20px;">
         {% if varietal_list %}
         <div class="row">
-    
+
             {% for varietal in varietal_list %}
                 <div class="item col-6" style="text-align: center;">
                     <div class="container" 
                     style="padding: 20px; border: 2px solid gray;
                     border-radius: 10px; margin: 5px 0px;
-                    width: 500px; height: 200px;">
-                        <!-- <a href="{% url 'varietal_products' varietal.id %}" style="color: black;"> -->
-                        <!-- <a href="{% url 'varietal_products' varietal.id %}" style="color: black;"> -->
+                    width: 500px; height: 200px;
+                    background-color: rgb(234, 232, 232);">
+
                         <a href="/varietal/varietal_products/{{varietal.id}}/" style="color: black;">
                             <h3>{{ varietal.name }}</h3>
                             <p>Features: {{ varietal.features }}</p>
@@ -32,11 +31,12 @@
                     </div>
                 </div>
             {% endfor %}
-    
+
         </div>
         {% else %}
             <p>There is not any added varietal.</p>
         {% endif %}
 
     </div>
+
 {% endblock %}

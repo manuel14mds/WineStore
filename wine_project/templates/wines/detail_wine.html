@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 {% block title %}
-    <title>Detail Wine</title>
+    Detail Wine
 {% endblock %}
 {% block content %}
-<div class="container">
+<!-- <div class="container">
 <p>Detalle </p>
 <p>Name: {{wine.name}}</p>
 <p>Price: {{wine.price}}</p>
@@ -19,5 +19,94 @@
     <button type="submit" class="btn btn-danger">Update</button>
 </form>
 
-</div>
+</div> -->
+        <style>
+            .img{
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-color: aquamarine;
+                width: 400px;
+                height: 600px;
+            }
+            .detailContainer p{ 
+                padding-top: 10px;
+                font-size: 20px;
+            }
+            h1{
+                padding: 20px;
+                color: rgb(208, 211, 213);
+                font-weight: bold;
+                font-family: 'Times New Roman', Times, serif;
+            }
+            h2{
+                padding: 30px;
+                color: rgb(208, 211, 213);
+                font-weight: bold;
+                font-family: 'Times New Roman', Times, serif;
+            }
+            span{color: whitesmoke; margin-left: 10px;}
+            .price{color: rgb(157, 255, 127); margin-left: 10px;}
+
+        </style>
+
+        <section class="container bg-secondary">
+            <div class="container row">
+                <h1 class="col-12">{{wine.name}}</h1>
+                <div class="containerImg col-7" style=" display: grid; place-items: center; padding: 20px;">
+                    <div class="img" style="background-image: url({{wine.image.url}});" ></div>
+                </div>
+                <div class="detailContainer col-5" style="background-color: rgb(20, 20, 20); padding: 40px; color: rgb(208, 211, 213);">
+                    <h2 class="nameWine">{{wine.name}}</h2>
+                    <p>Varietal: <span>{{wine.varietal}}</span></p>
+                    <p>Age: <span>{{wine.age}}</span></p>
+                    <p>Price: <span class="price">{{wine.price}}</span> </p>
+                    <p>Winery: <span>{{wine.winery}}</span></p>
+
+                    {% if request.user.is_authenticated %}
+                        <div style="margin-top: 60px;">
+                            <!-- Buttons delete update -->
+                            <div class="row">
+                                <div class="col-6">
+                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete{{wine.id}}">
+                                        Delete
+                                    </button>
+                                </div>
+                                <div class="col-6">
+                                    <form action="/wines/update-wine/{{wine.pk}}/" method="POST">
+                                        {% csrf_token %}
+                                        <button type="submit" class="btn btn-primary">Update</button>
+                                    </form>
+                                </div>
+                            </div>
+
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="delete{{wine.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content" style="color: black;">
+                                        <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Delete wine</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        </div>
+                                        <div class="modal-body">
+                                        Are you sure you want delete this product?
+                                        </div>
+                                        <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <form action="/wines/delete-wine/{{wine.id}}/" method="POST">
+                                            {% csrf_token %}
+                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                        </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </section>
     {% endblock %}

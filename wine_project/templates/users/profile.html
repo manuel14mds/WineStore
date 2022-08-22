@@ -6,16 +6,22 @@
 
 {% block content %}
 
-<h1>Profile page</h1>
-{% if request.user.is_authenticated %}
-    <div class="card" style="width: 18rem;">
-        <img src="/media/{{ request.user.profile.image }}" class="card-img-top" alt="...">
-        <div class="card-body">
-        <h5 class="card-title">Username: {{ request.user.profile.user }}</h5>
-        <p class="card-text">Phone: {{ request.user.profile.phone }}</p>
-        <p class="card-text">Address: {{ request.user.profile.address }}</p>
-        </div>
+    <div class="container" 
+            style="display: grid; place-items:center; padding:100px; 
+            border-radius: 20px; margin-top: 20px; margin-bottom: 20px;
+            background-color: rgb(59, 59, 59); color: whitesmoke;">
+
+        <h1>Profile page</h1>
+        {% if request.user.is_authenticated %}
+            <div class="card" style="width: 18rem;">
+                <img src="/media/{{ request.user.profile.image }}" class="card-img-top" alt="...">
+                <div class="card-body">
+                <h5 class="card-title">Username: {{ request.user.profile.user }}</h5>
+                <p class="card-text">Phone: {{ request.user.profile.phone }}</p>
+                <p class="card-text">Address: {{ request.user.profile.address }}</p>
+                </div>
+            </div>
+        {% endif %}
     </div>
-{% endif %}
 
 {% endblock %}

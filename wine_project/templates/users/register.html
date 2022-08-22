@@ -5,12 +5,16 @@
 {% endblock %}
 
 {% block content %}
-<h1>Sign Up page</h1>
-<form action="" method="POST">
-    {% csrf_token %}
-        {{ form|crispy }}
-    <p><input type="submit" value="Register!!"></p>
-</form>
-
+    <div class="container" 
+            style="display: grid; place-items:center; padding:100px; 
+            border-radius: 20px; margin-top: 20px; margin-bottom: 20px;
+            background-color: rgb(59, 59, 59); color: whitesmoke;">
+        <h1>Sign Up page</h1>
+        <form action="" method="POST">
+            {% csrf_token %}
+                {{ form|crispy }}
+            <p><input type="submit" value="Register!!"></p>
+        </form>
+    </div>
 
 {% endblock %}
