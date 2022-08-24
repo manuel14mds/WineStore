@@ -23,7 +23,6 @@ def search_products(request):
 
 def detail_wine(request, id):
     wine = Wine.objects.get(id = id)
-    print(wine)
     return render(request, 'wines/detail_wine.html', context={"wine":wine})
 
 def delete_wine(request, id):
@@ -35,3 +34,18 @@ class WineUpdate(LoginRequiredMixin, UpdateView):
     model = Wine
     fields = '__all__'
     success_url = '/'
+
+""" def wine_update(request, pk):
+    print(request.POST)
+    wine = Wine.objects.get(id = pk)
+    
+    wine.name = request.POST['name']
+    wine.winery = request.POST['winery']
+    wine.varietal = request.POST['varietal']
+    wine.age = request.POST['age']
+    wine.price = request.POST['price']
+    wine.aviable = request.POST['aviable']
+    wine.image = request.POST['image']
+    wine.save()
+    
+    return redirect(wines) """

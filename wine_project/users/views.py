@@ -36,10 +36,11 @@ def login_request(request):
 
 def register(request):
     if request.method == 'POST':
+        print(request.POST)
         form = User_registration_form(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('login')
+            return redirect(login_request)
         else:
             context = {'errors':form.errors}
             form = User_registration_form()
@@ -59,7 +60,6 @@ def show_profile(request, pk):
         return redirect(home)
 
     elif request.method == 'GET':
-        print(6)
         if request.user.is_authenticated:
             profile = request.user.profile
             context = {'profile': profile}

@@ -61,6 +61,13 @@
                     <p>Varietal: <span>{{wine.varietal}}</span></p>
                     <p>Age: <span>{{wine.age}}</span></p>
                     <p>Price: <span class="price">{{wine.price}}</span> </p>
+                    <p>Aviable:
+                        {% if wine.aviable %}
+                            Yes
+                        {% else %}
+                            No
+                        {% endif %}
+                    </p>
                     <p>Winery: <span>{{wine.winery}}</span></p>
 
                     {% if request.user.is_authenticated %}

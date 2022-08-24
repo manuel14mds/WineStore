@@ -7,6 +7,7 @@ class Wine(models.Model):
     winery = models.ForeignKey(Winery, on_delete=models.CASCADE)
     varietal = models.ForeignKey(varietal, on_delete=models.CASCADE)
     age = models.IntegerField()
+    aviable = models.BooleanField(default=True) 
     price = models.FloatField(default=0)
     image = models.ImageField(upload_to='wines/', null=True, blank=True)
 
