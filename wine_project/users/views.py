@@ -14,6 +14,7 @@ from .models import User_profile
 
 def login_request(request):
     if request.method == 'POST':
+        print(request.POST)
         form = AuthenticationForm(request=request, data=request.POST)
         if form.is_valid():
             username = form.cleaned_data.get('username')
@@ -36,7 +37,6 @@ def login_request(request):
 
 def register(request):
     if request.method == 'POST':
-        print(request.POST)
         form = User_registration_form(request.POST)
         if form.is_valid():
             form.save()
