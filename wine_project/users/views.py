@@ -54,9 +54,9 @@ def register(request):
         form = User_registration_form()
         return render(request, 'users/register.html', {'form': form})
 
-def show_profile(request, username):
+def show_profile(request, pk):
     if request.method == 'POST':
-        user = User_profile.objects.get(username=username)
+        user = User_profile.objects.get(pk=pk)
         user.phone = request.POST['phone']
         user.address = request.POST['address']
         user.save()

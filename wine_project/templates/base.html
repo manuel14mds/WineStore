@@ -65,9 +65,11 @@
                         <a class="nav-link" href="/accounts/create-profile/"> Create Profile</a>
                     </li>
                     {% endif %}
+                    {% if request.user.profile.phone %}
                     <li class="nav-item">
-                        <a class="nav-link" href="/accounts/profile/{{user.username}">Profile</a>
+                        <a class="nav-link" href="/accounts/profile/{{user.pk}}">Profile</a>
                     </li>
+                    {% endif %}
                 {% else %}
                     <li class="nav-item">
                         <a class="nav-link" href="/accounts/login/">Login</a>
