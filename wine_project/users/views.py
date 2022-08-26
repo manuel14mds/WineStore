@@ -11,6 +11,7 @@ from wine_project.views import home
 from users.forms import User_registration_form
 
 from .models import User_profile
+from django.contrib.auth.models import User
 
 
 def login_request(request):
@@ -39,6 +40,7 @@ def login_request(request):
 def register(request):
     if request.method == 'POST':
         form = User_registration_form(request.POST)
+        # print(form.errors) <li>The password is too similar to the username.</li><li>This password is too common.
         if form.is_valid():
             form.save()
             return redirect(login_request)
