@@ -1,3 +1,4 @@
+from email.headerregistry import Address
 from multiprocessing import context
 from unicodedata import name
 from django.shortcuts import render, redirect
@@ -51,9 +52,9 @@ def register(request):
         form = User_registration_form()
         return render(request, 'users/register.html', {'form': form})
 
-def show_profile(request, pk):
+def show_profile(request, username):
     if request.method == 'POST':
-        user = User_profile.objects.get(pk=pk)
+        user = User_profile.objects.get(username=username)
         user.phone = request.POST['phone']
         user.address = request.POST['address']
         user.save()
@@ -64,3 +65,13 @@ def show_profile(request, pk):
             profile = request.user.profile
             context = {'profile': profile}
             return render(request, 'users/profile.html', context=context)
+
+def create_profile(request):
+    if request.method == 'POST':
+        User_profile.objects.create(
+            user=request.user,
+            phone=request.POST['phone'],
+            address=request.POST['address'],
+            # image=request.POST['image']
+        )
+    return render(request,'users/create_profile.html', context={})
