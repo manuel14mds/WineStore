@@ -47,6 +47,7 @@
             }
             span{color: whitesmoke; margin-left: 10px;}
             .price{color: rgb(157, 255, 127); margin-left: 10px;}
+            .shop{margin-top: 20px;}
 
         </style>
 
@@ -71,6 +72,13 @@
                     <p>Winery: <span>{{wine.winery}}</span></p>
 
                     {% if request.user.is_authenticated %}
+                    <button class="btn btn-primary shop">
+                        Shop now!
+                    </button>
+                                            
+                    {% endif %}
+
+                    {% if request.user.is_staff %}
                         <div style="margin-top: 60px;">
                             <!-- Buttons delete update -->
                             <div class="row">

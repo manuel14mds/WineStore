@@ -32,7 +32,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/wines">All Wines</a>
                 </li>
-                {% if request.user.is_authenticated %}
+                {% if request.user.is_staff %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'wine_create' %}">Add Wine</a>
                     </li>
@@ -40,7 +40,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/varietal/varietal/">Varietal</a>
                 </li>
-                {% if request.user.is_authenticated %}
+                {% if request.user.is_staff %}
                     <li class="nav-item">
                         <a class="nav-link" href="/varietal/addVarietal/">Add Varietal</a>
                     </li>
@@ -48,7 +48,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/winery/wineries/">Winery</a>
                 </li>
-                {% if request.user.is_authenticated %}
+                {% if request.user.is_staff %}
                     <li class="nav-item">
                         <a class="nav-link" href="/winery/addWinery/" style="margin-right: 200px ;">Add Winery</a>
                     </li>
