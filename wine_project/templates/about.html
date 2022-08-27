@@ -7,6 +7,16 @@
 
 {% block content %}
 <style >
+    .about{
+        margin: 30px 10px;
+        background-color: rgb(215, 215, 215); 
+        
+        padding: 30px 0px;
+        border-radius: 10px;
+    }
+    .about h1{
+        text-align: center;
+    }
     .carousel{
         margin-bottom: 40px;
     }
@@ -24,66 +34,69 @@
         height: 400px;
     }
     .content{
+        background-color: rgb(59, 59, 59); 
+        color: whitesmoke;
         width: 60%;
         height: 400px;
-        background-color: antiquewhite;
-        padding: 20px;
+        padding: 30px;
     }
 </style>
 <section class="container">
+    <div class="about">
+
+        <h1>About Us</h1><br>
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+            <div class="carousel-inner bg-secondary">
     
-    <h1>About Us</h1><br>
-    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
-        <div class="carousel-inner bg-secondary">
-
-            <div class="carousel-item active">
-                <div class="containerInfo d-block w-100" >
-
-                    <div class="img" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSru3UZ1pdZ5vmGUuI_IfzG9AxtrvidOerV6w&usqp=CAU);"></div>
-                    <div class="content">
-                        <h2>Lucía Gómez Salinas</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos nobis saepe eum voluptatibus in, optio cum voluptate aliquam rerum atque maxime! Reiciendis harum dignissimos ea accusantium ad tempore voluptatum voluptate!</p>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo distinctio nihil sint nisi, optio animi reprehenderit velit a consectetur expedita voluptas numquam reiciendis assumenda libero ut ex maxime sit aliquid.</p>
-                        <a href="https://www.linkedin.com/in/luispablosegovia/" target="_blank" class="btn btn-primary">LinkedIn</a>
-                        <a href="https://github.com/manoloacademia/" target="_blank" class="btn btn-dark">GitHub</a>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="carousel-item">
-                <div class="containerInfo d-block w-100" >
-                    <div class="img " style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPZ3aa1KAjZZcfFPEvzax3UsMAreorlWpCXQ&usqp=CAU);"></div>
-                    <div class="content ">
-                        <h2>Manuel Florez</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos nobis saepe eum voluptatibus in, optio cum voluptate aliquam rerum atque maxime! Reiciendis harum dignissimos ea accusantium ad tempore voluptatum voluptate!</p>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo distinctio nihil sint nisi, optio animi reprehenderit velit a consectetur expedita voluptas numquam reiciendis assumenda libero ut ex maxime sit aliquid.</p>
-                        <a href="https://www.linkedin.com/in/luispablosegovia/" target="_blank" class="btn btn-primary">LinkedIn</a>
-                        <a href="https://github.com/manoloacademia/" target="_blank" class="btn btn-dark">GitHub</a>
+                <div class="carousel-item active">
+                    <div class="containerInfo d-block w-100" >
+    
+                        <div class="img" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSru3UZ1pdZ5vmGUuI_IfzG9AxtrvidOerV6w&usqp=CAU);"></div>
+                        <div class="content">
+                            <h2>Lucía Gómez Salinas</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos nobis saepe eum voluptatibus in, optio cum voluptate aliquam rerum atque maxime! Reiciendis harum dignissimos ea accusantium ad tempore voluptatum voluptate!</p>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo distinctio nihil sint nisi, optio animi reprehenderit velit a consectetur expedita voluptas numquam reiciendis assumenda libero ut ex maxime sit aliquid.</p>
+                            <a href="https://www.linkedin.com/in/luispablosegovia/" target="_blank" class="btn btn-primary">LinkedIn</a>
+                            <a href="https://github.com/manoloacademia/" target="_blank" class="btn btn-dark">GitHub</a>
+                        </div>
+    
                     </div>
                 </div>
-            </div>
-            
-            <div class="carousel-item">
-                <div class="containerInfo d-block w-100 " >
-                    <div class="img " style="background-image: url(/media/Pablo_Segovia.jpg);"></div>
-                    <div class="content">
-                        <h2>Pablo Segovia</h2>
-                        <p>Chemical Engineer currently training in Python Development and Databases. Focused on promoting a professional change oriented towards the areas of Development, Programming, Data Science and Project Management, among others. I have more than 8 years of experience in Process Engineering, both for continuous and batch industries. Throughout my career I managed to acquire extensive know-how in production optimization, statistical analysis, variable linkage, root cause detection and comprehensive process improvement. I consider myself a person with great analytical capacity, aptitude for solving problems in highly complex scenarios and a 360° strategic vision of the business.</p>
-                        <a href="https://www.linkedin.com/in/luispablosegovia/" target="_blank" class="btn btn-primary">LinkedIn</a>
-                        <a href="https://github.com/manoloacademia/" target="_blank" class="btn btn-dark">GitHub</a>
+    
+                <div class="carousel-item">
+                    <div class="containerInfo d-block w-100" >
+                        <div class="img " style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPZ3aa1KAjZZcfFPEvzax3UsMAreorlWpCXQ&usqp=CAU);"></div>
+                        <div class="content ">
+                            <h2>Manuel Florez</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos nobis saepe eum voluptatibus in, optio cum voluptate aliquam rerum atque maxime! Reiciendis harum dignissimos ea accusantium ad tempore voluptatum voluptate!</p>
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo distinctio nihil sint nisi, optio animi reprehenderit velit a consectetur expedita voluptas numquam reiciendis assumenda libero ut ex maxime sit aliquid.</p>
+                            <a href="https://www.linkedin.com/in/luispablosegovia/" target="_blank" class="btn btn-primary">LinkedIn</a>
+                            <a href="https://github.com/manoloacademia/" target="_blank" class="btn btn-dark">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="carousel-item">
+                    <div class="containerInfo d-block w-100 " >
+                        <div class="img " style="background-image: url(/media/Pablo_Segovia.jpg);"></div>
+                        <div class="content">
+                            <h2>Pablo Segovia</h2>
+                            <p>Chemical Engineer currently training in Python Development and Databases. Focused on promoting a professional change oriented towards the areas of Development, Programming, Data Science and Project Management, among others. I have more than 8 years of experience in Process Engineering, both for continuous and batch industries. Throughout my career I managed to acquire extensive know-how in production optimization, statistical analysis, variable linkage, root cause detection and comprehensive process improvement. I consider myself a person with great analytical capacity, aptitude for solving problems in highly complex scenarios and a 360° strategic vision of the business.</p>
+                            <a href="https://www.linkedin.com/in/luispablosegovia/" target="_blank" class="btn btn-primary">LinkedIn</a>
+                            <a href="https://github.com/manoloacademia/" target="_blank" class="btn btn-dark">GitHub</a>
+                        </div>
                     </div>
                 </div>
             </div>
+            <button class="carousel-control-prev" type="button" data-target="#carouselExampleFade" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-target="#carouselExampleFade" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </button>
         </div>
-        <button class="carousel-control-prev" type="button" data-target="#carouselExampleFade" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-target="#carouselExampleFade" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </button>
     </div>
 
 </section>

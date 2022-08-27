@@ -74,6 +74,6 @@ def create_profile(request):
             user=request.user,
             phone=request.POST['phone'],
             address=request.POST['address'],
-            # image=request.POST['image']
+            image=request.POST['image']
         )
     return render(request,'users/create_profile.html', context={})

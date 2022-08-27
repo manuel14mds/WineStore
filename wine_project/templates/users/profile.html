@@ -14,7 +14,7 @@
         <h1>Profile page</h1>
         {% if request.user.is_authenticated %}
             <div class="card" style="width: 18rem; color: black;">
-                <img src="/media/{{ request.user.profile.image }}" class="card-img-top" alt="...">
+                <img src="/../../media/profile_image/{{ request.user.profile.image }}" class="card-img-top" alt="...">
                 <div class="card-body">
                 <h5 class="card-title">Username: {{ request.user.profile.user }}</h5>
                 <p class="card-text">Phone: {{ request.user.profile.phone }}</p>
@@ -31,19 +31,18 @@
                     <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Updating Profile</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Updating Profile - {{ request.user.profile.user }}</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                         </div>
                         <div class="modal-body">
-                            <span>{{ request.user.profile.user }}</span>
                         <form method="POST" action="../{{request.user.profile.id}}/">
                             {% csrf_token %}
                             <label for="">phone</label><br>
                             <input type="number" name="phone" id="" value="{{ request.user.profile.phone }}"><br><br>
                             <label for="">address</label><br>
-                            <input type="text" name="address" id="" value="{{ request.user.profile.address }}"><br>
+                            <input type="text" name="address" id="" value="{{ request.user.profile.address }}">
 
                             <div class="modal-footer">
                                 <input class="btn btn-success" type="submit" value="submit">

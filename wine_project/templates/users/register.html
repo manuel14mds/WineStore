@@ -6,18 +6,25 @@
 
 {% block content %}
 
-<form action="" method="POST">
-{% csrf_token %}
+<div class="container">
+    <div style="display: grid; place-items:center; padding:100px; 
+    border-radius: 20px; margin-top: 20px; margin-bottom: 20px;
+    background-color: rgb(59, 59, 59); color: whitesmoke;">
+    <form action="" method="POST">
+    {% csrf_token %}
+        <h1>Register</h1>
+        <table>
+    
+            {{form|crispy}}
+    
+        </table>
+    
+        <p><input type="submit" value="Registrate!!"></p>
+    
+        </form>
+    </div>
 
-    <table>
-
-        {{form|crispy}}
-
-    </table>
-
-    <p><input type="submit" value="Registrate!!"></p>
-
-    </form>
+</div>
 
 
 {% endblock %}
