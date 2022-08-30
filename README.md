@@ -1,4 +1,4 @@
-# Entrega Intermedia de Proyecto Final (Coderhouse Python 31090)
+# Entrega de Proyecto Final (Coderhouse Python 31090)
 ## _Wine Store_
 
 ## Miembros del equipo
@@ -24,7 +24,7 @@ En él se pueden encontrar 3 clases de modelos:
 - Bodegas (Wineries)
 - Variedades (Varietal)
 
-Además, se pueden agregar nuevas instancias de estos modelos a la base de datos.
+Además, se pueden agregar nuevos elementos de estos modelos a la base de datos.
 
 ## Navegación y tipos de usuario
 
