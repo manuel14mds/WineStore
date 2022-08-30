@@ -56,6 +56,11 @@ En caso de ser un "usuario administrador" tiene todas la opciones que un usuario
 - Add winery
 - Crud Wines
 
+## Video de Navegación por el proyecto
+### Hacer click en la imagen del vino:
+
+[![Watch the video](https://media.istockphoto.com/photos/detail-of-pouring-red-wine-into-glass-picture-id1191927537?k=20&m=1191927537&s=612x612&w=0&h=-0PFgiUFJyHDBPl3UZnmQSYtMU20IhtD_ESJelfRdes=)](https://www.youtube.com/watch?v=2-M1FfZu5y8) 
+
 ## Tecnologías
 
 | TECNOLOGÍA | VERSIÓN | DESCRIPCIÓN |
